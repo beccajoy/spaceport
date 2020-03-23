@@ -7,14 +7,14 @@ class Ship {
     (obj.type === invalidType[0] ||
     obj.type === invalidType[1] ||
     obj.type === invalidType[2] ? undefined : obj.type);
-    this.maxCrew = 2;
-    //Refactor this
+    this.maxCrew = obj.maxCrew;
     this.odometer = this.odometerInitialized(obj);
-    this.fuelCapacity =
-    (!obj.fuelCapacity ? 10 : obj.fuelCapacity);
+    this.fuelCapacity = (!obj.fuelCapacity ? 10 : obj.fuelCapacity);
     this.fuel = 0;
     this.captain = obj.captain;
     this.crew = [];
+    this.cargo = [];
+    this.parts = {};
   }
 
   odometerInitialized(obj) {
@@ -25,6 +25,19 @@ class Ship {
     }
   }
 
-};
+  addCrew(newCrew) {
+     var openCrewSpots = this.maxCrew - this.crew.length;
+     for (var i = 0; i < openCrewSpots; i++){
+       if (newCrew[i].isAlive === true) this.crew.push(newCrew[i]);
+      }
+    }
+
+  loadCargo(partCargo) {
+    if (partCargo) {
+      return this.cargo.push(partCargo)
+    }
+  }
+
+}
 
 module.exports = Ship;

@@ -146,7 +146,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('can add multiple crew members', function() {
+  it('can add multiple crew members', function() {
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
     var fighter = new Ship(
@@ -165,7 +165,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, crew);
   })
 
-  it.skip('can add crew members to the existing crew', function() {
+  it('can add crew members to the existing crew', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
@@ -186,7 +186,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, expectedCrew);
   })
 
-  it.skip('can only add crew up to the maxCrew size', function() {
+  it('can only add crew up to the maxCrew size', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
@@ -207,7 +207,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, expectedCrew);
   })
 
-  it.skip('can not add something other than a being into the crew', function() {
+  it('can not add something other than a being into the crew', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -223,7 +223,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('has no cargo by default', function() {
+  it('has no cargo by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -236,7 +236,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, []);
   })
 
-  it.skip('can load cargo', function() {
+  it('can load cargo', function() {
     var partCargo = new Part({name: 'Dell', type: 'computer', value: 100});
     var fighter = new Ship(
       {
@@ -271,7 +271,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, [partCargo]);
   })
 
-  it.skip('has an empty parts list by default', function() {
+  it('has an empty parts list by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
