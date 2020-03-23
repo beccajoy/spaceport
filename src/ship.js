@@ -1,4 +1,5 @@
 var invalidType = ['wooden', 'tin', 'plastic'];
+var Part = require("../src/part.js");
 
 class Ship {
   constructor(obj) {
@@ -32,9 +33,9 @@ class Ship {
       }
     }
 
-  loadCargo(partCargo) {
-    if (partCargo) {
-      return this.cargo.push(partCargo)
+  loadCargo(part) {
+    if (part instanceof Part) {
+      return this.cargo.push(part)
     }
   }
 
